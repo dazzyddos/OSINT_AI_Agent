@@ -1,0 +1,19 @@
+# LangGraph and LangChain
+langgraph>=0.2.0
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langchain-core>=0.3.0
+
+# API clients
+shodan>=1.31.0
+httpx>=0.27.0
+
+# Docker
+docker>=7.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+
+# Optional: for better async support
+aiohttp>=3.9.0

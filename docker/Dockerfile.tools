@@ -1,0 +1,46 @@
+FROM ubuntu:22.04
+
+# Avoid interactive prompts during build
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install base dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    wget \
+    git \
+    ruby \
+    ruby-dev \
+    build-essential \
+    libcurl4-openssl-dev \
+    libxml2-dev \
+    libxslt1-dev \
+    zlib1g-dev \
+    libyaml-dev \
+    dnsutils \
+    jq \
+    unzip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install WhatWeb
+RUN git clone https://github.com/urbanadventurer/WhatWeb.git /opt/whatweb && \
+    cd /opt/whatweb && \
+    gem install bundler && bundle install --system
+ENV PATH="/opt/whatweb:${PATH}"
+
+# Install Subfinder
+RUN curl -sSL https://github.com/projectdiscovery/subfinder/releases/download/v2.6.6/subfinder_2.6.6_linux_amd64.zip -o /tmp/subfinder.zip && \
+    unzip /tmp/subfinder.zip -d /usr/local/bin/ && \
+    chmod +x /usr/local/bin/subfinder && \
+    rm /tmp/subfinder.zip
+
+# Install httpx for probing
+RUN curl -sSL https://github.com/projectdiscovery/httpx/releases/download/v1.6.8/httpx_1.6.8_linux_amd64.zip -o /tmp/httpx.zip && \
+    unzip /tmp/httpx.zip -d /usr/local/bin/ && \
+    chmod +x /usr/local/bin/httpx && \
+    rm /tmp/httpx.zip
+
+# Create working directory
+WORKDIR /workspace
+
+# Default command
+CMD ["/bin/bash"]
