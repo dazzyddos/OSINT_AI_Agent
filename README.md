@@ -81,7 +81,7 @@ osint_agent/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/osint-agent.git
+git clone git@github.com:dazzyddos/OSINT_AI_Agent.git
 cd osint-agent
 ```
 
