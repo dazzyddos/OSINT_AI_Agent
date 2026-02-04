@@ -2,7 +2,7 @@
 
 A multi-agent OSINT (Open Source Intelligence) reconnaissance framework built with [LangGraph](https://github.com/langchain-ai/langgraph). This project demonstrates how to orchestrate specialized AI agents that collaborate to perform comprehensive security reconnaissance on target domains.
 
-Note: This is a simple tool built for learning purposes to demonstrate how to get started with building AI Agents in the cybersecurity field. For a detailed walkthrough and explanation, check out the accompanying blog post: Building AI Agents for Cybersecurity with LangGraph. 
+Note: This is a simple tool built for learning purposes to demonstrate how to get started with building AI Agents in the cybersecurity field. For a detailed walkthrough and explanation, check out the accompanying blog post: [Building Your First Cybersecurity AI Agent with LangGraph](https://medium.com/seercurity-spotlight/building-your-first-cybersecurity-ai-agent-with-langgraph-d27107ac872a). 
 
 ## Overview
 
